@@ -68,7 +68,6 @@ def argsDefiner():
 
 
 def argsParser():
-    global parser
     if len(sys.argv) < 2:
         parser.print_help(sys.stderr)
         sys.exit(1)
@@ -83,8 +82,6 @@ def argsParser():
 
 
 def getExit():
-    global LoggerObj
-    global threads
     while True:
         for line in sys.stdin:
             if str(line).lower() == "exit\n":
@@ -102,6 +99,7 @@ def getExit():
 
 if __name__ == "__main__":
     HOST = "0.0.0.0"
+    PORT = 0
     BACKLOG = 10
     LOGGER_DEFAULT = 5
 
